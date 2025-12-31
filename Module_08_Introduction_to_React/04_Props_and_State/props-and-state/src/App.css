@@ -1,0 +1,15 @@
+.container {
+  padding: 20px;
+}
+
+.card {
+  border: 1px solid #ccc;
+  padding: 15px;
+  margin-bottom: 15px;
+  width: 250px;
+}
+
+button {
+  padding: 5px 10px;
+  cursor: pointer;
+}

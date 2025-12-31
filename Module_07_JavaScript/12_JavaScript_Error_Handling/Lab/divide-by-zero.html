@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>JavaScript Error Handling</title>
+  </head>
+  <body>
+    <h2>Division Example</h2>
+    <p id="output"></p>
+
+    <script>
+      try {
+        let a = 10;
+        let b = 0;
+
+        if (b === 0) {
+          throw new Error("Division by zero is not allowed.");
+        }
+
+        let result = a / b;
+        document.getElementById("output").innerText = "Result: " + result;
+      } catch (error) {
+        document.getElementById("output").innerText = "Error: " + error.message;
+      }
+    </script>
+  </body>
+</html>

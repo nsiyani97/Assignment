@@ -1,0 +1,29 @@
+/* Form background */
+.form-box {
+  background-color: #f2f2f2;
+  padding: 20px;
+  width: 300px;
+  margin: 40px auto;
+}
+
+/* Common form fields */
+.form-field {
+  display: block;
+  width: 100%;
+  padding: 8px;
+  margin: 10px 0;
+}
+
+/* Unique submit button */
+#submitBtn {
+  background-color: blue;
+  color: white;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+}
+
+/* Hover effect */
+#submitBtn:hover {
+  background-color: darkblue;
+}
