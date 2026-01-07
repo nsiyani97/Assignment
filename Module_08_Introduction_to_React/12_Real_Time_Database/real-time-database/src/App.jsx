@@ -1,6 +1,6 @@
-import UserTable from "./task_1/UserTable";
-import FirebaseAuth from "./task_2/FirebaseAuth";
-import LoadingAndError from "./task_3/LoadingAndError";
+import UserTable from './task_1/UserTable'
+import FirebaseCrud from './task_2/FirebaseCrud'
+import LoadingAndError from './task_3/LoadingAndError'
 
 function App() {
   return (
@@ -10,8 +10,8 @@ function App() {
 
       <hr />
 
-      <h2>Task 2: Firebase Authentication</h2>
-      <FirebaseAuth />
+      <h2>Task 2: Firebase</h2>
+      <FirebaseCrud />
 
       <hr />
 

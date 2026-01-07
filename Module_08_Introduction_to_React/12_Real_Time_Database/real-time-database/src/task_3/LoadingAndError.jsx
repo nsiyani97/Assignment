@@ -1,20 +1,20 @@
 import { useEffect, useState } from "react";
 
-function LoadingAndError() {
-  const [data, setData] = useState([]);
+function UserTable() {
+  const [users, setUsers] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [error, setError] = useState("");
+  const [error, setError] = useState(null);
 
   useEffect(() => {
-    fetch("https://jsonplaceholder.typicode.com/posts")
+    fetch("http://localhost:4000/users")
       .then((res) => {
         if (!res.ok) {
-          throw new Error("Failed to fetch data");
+          throw new Error("Failed to fetch users");
         }
         return res.json();
       })
       .then((data) => {
-        setData(data.slice(0, 5));
+        setUsers(data);
         setLoading(false);
       })
       .catch((err) => {
@@ -23,16 +23,34 @@ function LoadingAndError() {
       });
   }, []);
 
-  if (loading) return <p>Loading...</p>;
-  if (error) return <p>Error: {error}</p>;
+  if (loading) {
+    return <p>Loading users...</p>;
+  }
+
+  if (error) {
+    return <p style={{ color: "red" }}>Error: {error}</p>;
+  }
 
   return (
-    <ul>
-      {data.map((item) => (
-        <li key={item.id}>{item.title}</li>
-      ))}
-    </ul>
+    <table border="1" cellPadding="5">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Email</th>
+        </tr>
+      </thead>
+      <tbody>
+        {users.map((user) => (
+          <tr key={user.id}>
+            <td>{user.id}</td>
+            <td>{user.name}</td>
+            <td>{user.email}</td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
   );
 }
 
-export default LoadingAndError;
+export default UserTable;
